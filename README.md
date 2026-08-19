@@ -83,24 +83,6 @@ FitVerse/
 └── README.md
 ```
 
-## 📸 Screenshots
-
-### 🏠 Home Page
-
-![Home Page](Screenshots/Home.png)
-![Home Page](Screenshots/Home(2).png)
-
-### 🔐 Login Page
-
-![Login Page]("Screenshots\Login.png")
-
-### 👤 Contact Page
-
-![Profile Page](Screenshots/Contact.png)
-
-### 👗 Outfit Recommendation
-
-![Outfit Recommendation](Screenshots/Outfit Recommendation.png)
 
 
 ## 🎯 Goal
