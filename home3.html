@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitVerse</title>
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="Home-style.css">
+</head>
+
+<body>
+
+    <div class="container" id="h">
+
+        <!-- =========================
+             HEADER
+        ========================= -->
+        <header>
+            <div class="since-top">
+                <i>SINCE 2026</i>
+            </div>
+
+            <div class="header-top">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div class="logo-box">
+                    <h1>FitVerse</h1>
+                    <p class="sub">LIFESTYLE BOUTIQUE</p>
+                </div>
+
+                <div class="icon">
+                    <a href="profile.php">
+                        <i style="color: black;" class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+            </div>
+
+            <nav>
+                <a href="home3.html" class="home-btn">HOME</a>
+                <a href="questions.php">OUTFITS</a>
+                <a href="loginMM.php">LOGIN</a>
+                <a href="contact.html">HELP</a>
+            </nav>
+        </header>
+
+
+        <!-- =========================
+             HERO
+        ========================= -->
+        <section class="hero">
+            <canvas id="smokeCanvas"></canvas>
+            <div class="hero-text">
+                <span>new collection</span>
+                <h2>STYLE YOUR VIBE</h2>
+                <a href="questions.php">
+                    <button>let's start.</button>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- =========================
+             CATEGORIES
+        ========================= -->
+        <section class="categories">
+            <div class="category"><div class="category1">Fashion</div></div>
+            <div class="category"><div class="category2">Vogue</div></div>
+            <div class="category"><div class="category3">Lifestyle</div></div>
+            <div class="category"><div class="category4">Chic</div></div>
+        </section>
+
+
+        <!-- =========================
+             BANNER
+        ========================= -->
+        <section class="banner">
+            <div class="txt">
+                <p>Your journey to</p>
+                <h3>ELEGANCE START HERE,</h3>
+                <span>Style your look smartly</span>
+            </div>
+            <div class="circle-img">
+                <img src="image-web/Home-img.jpeg" alt="Fashion">
+            </div>
+        </section>
+
+
+        <!-- =========================
+             SLIDER
+        ========================= -->
+        <section class="slider-section">
+            <h4>Style Your Moment</h4>
+            <div class="slider-wrap">
+                <div class="slider" id="slider">
+                    <div class="slide"><img src="image-web/Home-img5.jpeg" alt=""></div>
+                    <div class="slide"><img src="image-web/Home-img7.jpeg" alt=""></div>
+                    <div class="slide"><img src="image-web/Home-img3.jpeg" alt=""></div>
+                    <div class="slide"><img src="image-web/Home-img8.jpeg" alt=""></div>
+                    <div class="slide"><img src="image-web/Home-img6.jpeg" alt=""></div>
+                    <div class="slide"><img src="image-web/Home-img2.jpeg" alt=""></div>
+                    <div class="slide"><img src="image-web/Home-img1.jpeg" alt=""></div>
+                    <div class="slide"><img src="image-web/Home-img4.jpeg" alt=""></div>
+                    <div class="slide"><img src="image-web/Home-img8.jpeg" alt=""></div>
+                </div>
+            </div>
+        </section>
+
+
+         <div class="since-top">
+                <i>SINCE 2026</i>
+            </div>
+
+            
+
+
+    </div> <!-- قفلة الـ container هنا -->
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = slider.innerHTML;
+        slider.innerHTML += slides;
+        let autoScroll;
+
+        function startAutoScroll() {
+            autoScroll = setInterval(() => {
+                slider.scrollLeft += 1.5;
+                if (slider.scrollLeft >= slider.scrollWidth / 2) {
+                    slider.scrollLeft = 0;
+                }
+            }, 15);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScroll);
+        }
+
+        startAutoScroll();
+
+        const rightArrow = document.querySelector('.right');
+        const leftArrow = document.querySelector('.left');
+
+        if (rightArrow) {
+            rightArrow.addEventListener('click', () => {
+                slider.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+        }
+
+        if (leftArrow) {
+            leftArrow.addEventListener('click', () => {
+                slider.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+        }
+
+        slider.addEventListener('mouseenter', stopAutoScroll);
+        slider.addEventListener('mouseleave', startAutoScroll);
+
+        /* SMOKE EFFECT */
+        const canvas = document.getElementById('smokeCanvas');
+        const ctx = canvas.getContext('2d');
+        const box = document.querySelector('.hero');
+
+        function resizeCanvas() {
+            canvas.width = box.offsetWidth;
+            canvas.height = box.offsetHeight;
+        }
+
+        resizeCanvas();
+
+        let particles = [];
+        const mouse = { x: null, y: null, radius: 120 };
+
+        box.addEventListener('mousemove', (e) => {
+            const rect = box.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+
+        box.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.baseX = this.x;
+                this.baseY = this.y;
+                this.size = Math.random() * 25 + 10;
+                this.density = Math.random() * 100 + 1;
+            }
+
+            draw() {
+                ctx.fillStyle = "rgba(255,255,255,0.1)";
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            update() {
+                if (mouse.x !== null && mouse.y !== null) {
+                    let dx = this.x - mouse.x;
+                    let dy = this.y - mouse.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < mouse.radius && distance !== 0) {
+                        let force = (mouse.radius - distance) / mouse.radius;
+                        let directionX = dx / distance;
+                        let directionY = dy / distance;
+
+                        this.x += directionX * force * this.density * 0.6;
+                        this.y += directionY * force * this.density * 0.6;
+                    }
+                }
+
+                this.x += (this.baseX - this.x) * 0.02;
+                this.y += (this.baseY - this.y) * 0.02;
+            }
+        }
+
+        function init() {
+            particles = [];
+            let count = (canvas.width * canvas.height) / 1500;
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((particle) => {
+                particle.update();
+                particle.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            init();
+        });
+    </script>
+</body>
+</html>

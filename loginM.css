@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #b7c3aeb4, #c8d0c8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.card {
+    width: 800px;
+    display: flex;
+    background: #ece5e5;
+    border-radius: 25px;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Image */
+.image-box {
+    flex: 1;
+    transition: all 0.5s;
+     background-image: radial-gradient(#bcd1a827), url("image-web/login-img.jpeg")    ; 
+    background-position: center;
+   background-size: cover;
+   border-radius: 25px;
+}
+.image-box:hover{
+    scale: 1.05;
+}
+
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: #b7c3aeb4;
+    font-size: 20px;
+      transition: all 0.5s;
+}
+button:hover{
+    background-color: #305028a1;
+}
+/* .image-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+} */
+
+
+/* Form */
+.form-box {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 20px;
+}
+
+.form-box input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    padding: 5px;
+    outline: none;
+}
+
+input,
+.rou {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    padding: 8px;
+    margin: 10px 0;
+    outline: none;
+    font-size: 16px;
+}
+
+.gender {
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    }
+
+
+
+#loginForm {
+    display: block;
+}
+
+.box {
+    display: none;
+}
+
+.box.active {
+    display: block;
+}
+/* Links */
+.links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+.links:hover{
+   cursor: pointer;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 🔥 Responsive (Mobile) */
+@media (max-width: 880px) {
+
+
+       body {
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url("image-web/login-img.jpeg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-box{
+        display: none;
+    }
+    .form-box{
+        background-color: none;
+    }
+
+
+    .card {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 25px ;
+        border: none;
+    }
+
+    .image-box {
+        height: 200px;
+    }
+    .links a {
+        margin: 10px;
+    }
+
+}
+
+html{
+    scroll-behavior: smooth;
+}

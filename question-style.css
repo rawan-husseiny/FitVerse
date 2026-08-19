@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: radial-gradient(#d6e2cba2), url("./image-web/quistion-img2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Container Wrapper */
+.container {
+  width: 100% ;
+  max-width: 500px ;
+  padding: 20px ;
+  position: relative ;
+  margin: 0 auto ;
+}
+
+
+
+/* Hidden inputs for Steps */
+input[type="radio"][name="step"] {
+  display: none;
+}
+
+/* Steps System */
+.step {
+  display: none;
+  min-height: 75vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+#s3:checked ~ .step3,
+#s1:checked ~ .step1,
+#s4:checked ~ .step4,
+#s5:checked ~ .step5,
+#s6:checked ~ .step6,
+#s7:checked ~ .step7,
+#s8:checked ~ .step8,
+#s9:checked ~ .step9,
+#s10:checked ~ .step10,
+#s11:checked ~ .step11,
+#s12:checked ~ .step12 {
+  display: flex;
+}
+
+h1, h2 {
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.input {
+  padding: 12px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.2);
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.btn {
+  padding: 12px 20px;
+  background: #1a1a1a;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: #2d3d2c;
+}
+
+.btn.back {
+  background: transparent;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a;
+}
+
+.btn.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Options */
+.option {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 6px auto;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.5);
+  text-align: left;
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.option small {
+  display: block;
+  font-weight: normal;
+  font-size: 0.8rem;
+  color: #444;
+}
+
+input[type="radio"][name="shape"] {
+  display: none;
+}
+
+input[type="radio"][name="shape"]:checked + label {
+  background: #2d3d2c;
+  color: white;
+  border-color: #2d3d2c;
+}
+
+input[type="radio"][name="shape"]:checked + label small {
+  color: #ddd;
+}
