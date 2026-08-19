@@ -83,6 +83,26 @@ FitVerse/
 └── README.md
 ```
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home Page](Screenshots/Home.png)
+![Home Page](Screenshots/Home(2).png)
+
+### 🔐 Login Page
+
+![Login Page]("Screenshots\Login.png")
+
+### 👤 Contact Page
+
+![Profile Page](Screenshots/Contact.png)
+
+### 👗 Outfit Recommendation
+
+![Outfit Recommendation](Screenshots/Outfit Recommendation.png)
+
+
 ## 🎯 Goal
 
 The main goal of FitVerse is to make outfit selection easier, faster, and more personalized by combining UI/UX design, web development, and database technologies.
